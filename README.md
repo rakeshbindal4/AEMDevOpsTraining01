@@ -1,4 +1,4 @@
 # ciproject
-'' 'bash
+''''bash
 echo "This is just a test message"
-' ''
+''''
