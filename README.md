@@ -2,7 +2,7 @@
 ## Heading 2
 AEM Devop Training Project with Java
 
-'''bash
+''' bash
 echo "This is just a test project"
 '''
 
