@@ -1,0 +1,28 @@
+title AEM Demo CI Pipeline
+#author Siva Chedde <sivakumar.chedde@gmail.com>
+GITHub->Jenkins: Checkout
+Jenkins->Maven: Build and Test
+#note left of Jenkins: 1
+Maven->Nexus: Publish Snapshots
+#note over Maven: build and unit test
+Maven->Jenkins:unit test results
+Jenkins->Maven: code analysis
+#note left of Jenkins: 2
+Maven->SonarQube: code analysis results
+Maven->Jenkins: code analysis result
+Jenkins->Maven: Deploy AEM Application 
+#note left of Jenkins: 4
+Maven->AEM: Deploy AEM Application packages
+Maven->Jenkins: Deploymet status
+Jenkins->Maven: AEM app functional testing
+#note left of Jenkins: 5
+Maven->Selenium: Initiate functional tests
+Selenium->AEM: Execute functional tests
+Selenium->Maven: functional test results
+Maven->Jenkins: functional test results
+Jenkins->Maven: Initiate Visual tests
+Maven->Selenium: Kickoff visual tests
+Selenium->AEM: Execute visual tests
+Selenium->Applitools Eyes: Publish visual test reports
+Selenium->Maven: Publish visual test reports
+Maven->Jenkins: test results
